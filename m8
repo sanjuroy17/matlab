@@ -1,0 +1,26 @@
+energy = input('Enter the quantity of energy: '); 
+current_units = input('Enter the current units (J, ft-lb, cal, eV): ', 's'); 
+new_units = input('Enter the desired new units (J, ft-lb, cal, eV): ', 's'); 
+if strcmp(current_units, 'J') 
+energy_in_joules = energy; 
+elseif strcmp(current_units, 'ft-lb') 
+energy_in_joules = energy / 0.737562;   
+elseif strcmp(current_units, 'cal') 
+energy_in_joules = energy / 0.239006;   
+elseif strcmp(current_units, 'eV') 
+energy_in_joules = energy / 6.242e+12;   
+else 
+error('Invalid current unit.'); 
+end 
+if strcmp(new_units, 'J') 
+converted_energy = energy_in_joules; 
+elseif strcmp(new_units, 'ft-lb') 
+converted_energy = energy_in_joules * 0.737562;   
+elseif strcmp(new_units, 'cal') 
+converted_energy = energy_in_joules * 0.239006;  
+elseif strcmp(new_units, 'eV') 
+converted_energy = energy_in_joules * 6.242e+12;  
+else 
+error('Invalid new unit.'); 
+end 
+disp('The converted energy is '+ converted_energy+""+ new_units);
