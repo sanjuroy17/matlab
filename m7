@@ -1,0 +1,9 @@
+no_of_hours = input("Enter the numbver of hours worked: "); 
+hourly_wage = input("Enter the hourly wage: "); 
+if (no_of_hours <= 40) 
+salary = no_of_hours * hourly_wage; 
+else 
+salary = 40 * hourly_wage; 
+salary = salary + ((no_of_hours - 40) * (1.5 * hourly_wage)); 
+end 
+disp("The salary of the worker is: "+salary);
